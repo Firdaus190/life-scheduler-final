@@ -199,6 +199,12 @@
       </div>
     </div>
 
+    <div class="theme-toggle hide" id="publicAccessWrap" style="margin-bottom:12px; border-bottom:1px solid var(--border); padding-bottom:12px">
+      <span id="publicIcon"><svg class="icon icon-sm">
+          <use href="#ic-home" />
+        </svg> <b>Public Access</b></span>
+      <button class="switch" id="publicSwitch" aria-label="Toggle public access"></button>
+    </div>
     <div class="theme-toggle">
       <span id="themeIcon"><svg class="icon icon-sm">
           <use href="#ic-sun" />
@@ -215,6 +221,7 @@
         <p class="page-sub" id="pageSub">Ringkasan aktivitas dan progres hari ini.</p>
       </div>
       <div class="topbar-actions">
+        <button class="btn btn-ghost" id="btnAuth" style="margin-right: 8px;">Login</button>
         <button class="btn btn-primary" id="btnAdd"><svg class="icon icon-sm">
             <use href="#ic-plus" />
           </svg> Add Activity</button>
@@ -321,6 +328,7 @@
                 <use href="#ic-chevr" />
               </svg></button>
           </div>
+          <select id="calUserSelect" class="hide" style="margin-right:auto; margin-left:16px; padding: 4px 8px; border-radius: 6px; background: var(--bg-hover); color: var(--text); border: 1px solid var(--border);"></select>
           <button class="btn btn-ghost" id="calToday">Today</button>
           <div class="cal-legend" id="calLegend"></div>
         </div>
@@ -557,6 +565,54 @@
     <div class="focus-actions">
       <button type="button" class="btn btn-ghost" id="focusPauseBtn">Jeda</button>
       <button type="button" class="btn btn-primary" id="focusDoneBtn">Tandai Selesai</button>
+    </div>
+  </div>
+
+  <!-- ============================== Login Modal ============================== -->
+  <div id="loginModal" class="modal hide">
+    <div class="modal-box" style="max-width:400px">
+      <div class="modal-head">
+        <h2 id="loginTitle">Login</h2>
+        <button class="x-btn" id="btnCloseLogin"><svg class="icon icon-sm"><use href="#ic-x"/></svg></button>
+      </div>
+      <form id="loginForm" class="form-grid">
+        <div class="field">
+          <label>Username</label>
+          <input type="text" id="l_username" required>
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" id="l_password" required>
+        </div>
+        <div class="form-actions" style="margin-top:16px">
+          <button type="button" class="btn btn-ghost" id="btnToggleRegister">Register Baru</button>
+          <button type="submit" class="btn btn-primary" id="btnSubmitLogin" style="margin-left:auto">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================== Account Modal ============================== -->
+  <div id="accountModal" class="modal hide">
+    <div class="modal-box" style="max-width:400px">
+      <div class="modal-head">
+        <h2>Pengaturan Akun</h2>
+        <button class="x-btn" id="btnCloseAccount"><svg class="icon icon-sm"><use href="#ic-x"/></svg></button>
+      </div>
+      <form id="accountForm" class="form-grid">
+        <div class="field">
+          <label>Username Baru</label>
+          <input type="text" id="a_username" required>
+        </div>
+        <div class="field">
+          <label>Password Baru</label>
+          <input type="password" id="a_password" placeholder="Kosongkan jika tidak diganti">
+        </div>
+        <div class="form-actions" style="margin-top:16px">
+          <button type="button" class="btn btn-danger-ghost" id="btnLogout">Logout</button>
+          <button type="submit" class="btn btn-primary" style="margin-left:auto">Simpan</button>
+        </div>
+      </form>
     </div>
   </div>
 
